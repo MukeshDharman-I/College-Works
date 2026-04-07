@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Smart City Portal - GET vs POST</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: #1c2b36;
+            padding: 30px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 0 20px #00f7ff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00f7ff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="submit"] {
+            width: 48%;
+            margin-top: 15px;
+            background: #00f7ff;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #00ff88;
+        }
+    </style>
+</head>
+<body>
+
+<form action="ClientServlet" method="post">
+
+    <h1>🌆 Smart City Portal</h1>
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <label>Select Service:</label>
+    <select name="service">
+        <option>Water Supply</option>
+        <option>Electricity</option>
+        <option>Waste Management</option>
+        <option>Road Maintenance</option>
+    </select>
+    <label>Describe Issue:</label>
+    <textarea name="issue" rows="3" required></textarea>
+    <div class="buttons">
+        <input type="submit" value="Submit via POST">
+        <input type="submit" formaction="ClientServlet" formmethod="get" value="Submit via GET">
+    </div>
+</form>
+</body>
+</html>
